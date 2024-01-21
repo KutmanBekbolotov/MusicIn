@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="howler.min.js"></script>
+    <script defer src="script.js"></script>
+    <title>MusicIn</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>MusicIn</h1>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Ищите тут">
+                <button id="searchButton">Поиск</button>
+            </div>
+        </div>
+
+        <div class="content" id="searchResults">
+     
+        </div>
+
+       
+        <div class="playlist" id="playlistTab">
+            <h2>Твой плейлист</h2>
+            <ul id="playlistTracks">
+            
+            </ul>
+            <button class="close-button" onclick="closeTab('playlistTab')">Закрыть</button>
+        </div>
+
+ 
+        <div class="recent-searches" id="recentTab">
+            <h2>Недавно запрошенные</h2>
+            <ul id="recentSearchesList">
+      
+            </ul>
+            <button class="clear-button" onclick="clearRecentSearches()">Очистить</button>
+            <button class="close-button" onclick="closeTab('recentTab')">Закрыть</button>
+        </div>
+
+        <div class="sidebar">
+            <aside class="sidebar">
+                <button class="playlist-button" id="playlistButton">Твой плейлист</button>
+                <button class="recent-button" id="recentButton">Недавно запрошенные</button>
+                <div class="tabs-content">
+                   
+                </div>
+            </aside>
+        </div>
+    </div>
+
+</body>
+
+</html>
