@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background: linear-gradient(to bottom, #333, #1DB954);
+    background: linear-gradient(to left, #333333, #1DB954);
     font-family: 'Arial', sans-serif;
 }
 
@@ -52,7 +52,7 @@ body {
 .content {
     flex: 2;
     padding: 10px;
-    background: rgb(10, 216, 134);
+    background: linear-gradient(to left, #4dabf8, #1DB954);
     border-radius: 35px;
 }
 
