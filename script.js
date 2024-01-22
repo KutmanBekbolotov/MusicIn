@@ -8,7 +8,6 @@ const searchInput = document.getElementById('searchInput');
 const playlistTracks = document.getElementById('playlistTracks');
 let sound;
 
-
 let lastSearchQuery = '';
 
 function closeTab(tabId) {
@@ -31,7 +30,7 @@ function getAccessToken() {
         .then(data => {
             const accessToken = data.access_token;
             const query = searchInput.value;
-            lastSearchQuery = query; 
+            lastSearchQuery = query;
             searchMusic(query, accessToken);
         })
         .catch(error => console.error('Ошибка запроса токена:', error));
@@ -51,7 +50,6 @@ function searchMusic(query, accessToken) {
         .catch(error => console.error('Ошибка запроса:', error));
 }
 
-
 function displayResults(tracks) {
     searchResults.innerHTML = '';
 
@@ -66,21 +64,19 @@ function displayResults(tracks) {
         const li = document.createElement('li');
         li.textContent = `${track.name} - ${track.artists[0].name}`;
 
-        
         li.addEventListener('click', function () {
             playPause(track, li);
         });
 
         const addToPlaylistButton = createButton('Добавить в плейлист', function (event) {
-            event.stopPropagation(); 
+            event.stopPropagation();
             addToPlaylist(track);
         });
 
         const playPauseButton = createButton('Play', function (event) {
-            event.stopPropagation(); 
+            event.stopPropagation();
             playPause(track, li);
         });
-
 
         li.appendChild(addToPlaylistButton);
         li.appendChild(playPauseButton);
@@ -93,16 +89,13 @@ function displayResults(tracks) {
     addToRecentSearchesOnSearch();
 }
 
-
 function playPause(track, listItem) {
     const isPlaying = sound && sound.playing() && sound.trackId === track.id;
-
 
     if (isPlaying) {
         sound.pause();
         listItem.querySelector(`button[data-track-id="${track.id}"]`).textContent = 'Play';
     } else {
-    
         if (sound) {
             sound.stop();
         }
@@ -121,19 +114,17 @@ function playPause(track, listItem) {
     }
 }
 
-
 function addToPlaylist(track) {
-  
     const li = document.createElement('li');
     li.textContent = `${track.name} - ${track.artists[0].name}`;
 
     const playPauseButton = createButton('Play', function (event) {
-        event.stopPropagation(); 
+        event.stopPropagation();
         playPause(track, li);
     });
 
     const deleteButton = createButton('Удалить', function (event) {
-        event.stopPropagation(); 
+        event.stopPropagation();
         removeFromPlaylist(li);
     });
 
@@ -146,9 +137,7 @@ function removeFromPlaylist(listItem) {
     playlistTracks.removeChild(listItem);
 }
 
-
 function addToRecentSearchesOnSearch() {
-    
     const recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
 
     recentSearchesList.innerHTML = '';
@@ -162,7 +151,6 @@ function addToRecentSearchesOnSearch() {
         li.textContent = query;
 
         li.addEventListener('click', function () {
-
             searchInput.value = query;
             getAccessToken();
         });
@@ -181,17 +169,18 @@ document.getElementById('searchButton').addEventListener('click', function () {
 });
 
 playlistButton.addEventListener('click', function () {
-
     playlistTab.classList.toggle('show-tab');
     recentTab.classList.remove('show-tab');
 });
 
 recentButton.addEventListener('click', function () {
-
     recentTab.classList.toggle('show-tab');
     playlistTab.classList.remove('show-tab');
 });
 
+// Ваш существующий код...
+
+// Пример создания кнопки
 function createButton(text, clickHandler) {
     const button = document.createElement('button');
     button.textContent = text;
