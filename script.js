@@ -12,7 +12,6 @@ let sound;
 
 let lastSearchQuery = '';
 
-// Функции для закрытия вкладок
 function closeTab(tabId) {
     const tab = document.getElementById(tabId);
     tab.classList.remove('show-tab');
@@ -181,20 +180,6 @@ recentButton.addEventListener('click', function () {
     playlistTab.classList.remove('show-tab');
 });
 
-// Добавленный код для форм входа и регистрации
-signUpForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    // Добавьте здесь логику для регистрации
-    // Например, получение данных из полей формы и отправка их на сервер
-});
-
-signInForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    // Добавьте здесь логику для входа
-    // Например, получение данных из полей формы и отправка их на сервер
-});
-
-// Пример создания кнопки
 function createButton(text, clickHandler) {
     const button = document.createElement('button');
     button.textContent = text;

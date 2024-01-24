@@ -31,7 +31,7 @@ body {
     padding: 8px;
     font-size: 16px;
     border: none;
-    border-radius: 12px; /* Добавлен радиус для красивых углов на всех устройствах */
+    border-radius: 12px; 
     outline: none;
     background-color: #acf9f9;
 }
@@ -69,7 +69,7 @@ body {
     color: rgb(0, 0, 0);
     border: none;
     cursor: pointer;
-    margin-bottom: 25px;
+    margin-bottom: 45px;
     border-radius: 12px;
     display: block;
     width: 100%;
@@ -97,7 +97,7 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 1000;
     overflow-y: auto;
-    animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .close-button {
@@ -111,17 +111,16 @@ body {
     color: #fff;
 }
 
-/* Медиа-запрос для адаптивного дизайна на устройствах с шириной экрана меньше 768px */
 @media only screen and (max-width: 768px) {
     .container {
-        flex-direction: column; /* Изменение направления flex контейнера для мобильных устройств */
+        flex-direction: column; 
     }
 
     .header, .search-bar, .content, .sidebar {
-        padding: 10px; /* Уменьшение отступов для мобильных устройств */
+        padding: 10px;
     }
 
     #searchInput {
-        margin-bottom: 10px; /* Уменьшение маргина для мобильных устройств */
+        margin-bottom: 10px; 
     }
 }
